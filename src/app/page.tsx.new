@@ -1,0 +1,87 @@
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div className="grid items-center min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col max-w-4xl mx-auto w-full">
+        <div className="flex flex-col items-center mb-12">
+          <Image
+            className="dark:invert mb-8"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={180}
+            height={38}
+            priority
+          />
+          <h1 className="text-3xl font-bold text-center mb-4">Raintor Tech Test</h1>
+          <p className="text-gray-600 text-center max-w-2xl">
+            Demonstration of real-time location communication and infinite scroll implementation
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
+              <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                <Image
+                  src="/globe.svg"
+                  alt="Globe icon"
+                  width={24}
+                  height={24}
+                  className="text-blue-600"
+                />
+              </div>
+              <h2 className="text-xl font-bold">Real-Time Location Sharing</h2>
+            </div>
+            <p className="text-gray-600 mb-6">
+              Demonstrates real-time location communication between users using SignalR WebSocket
+              connection. Send your location and see updates from other users on a map.
+            </p>
+            <Link
+              href="/location-sharing"
+              className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors"
+            >
+              Open Location Sharing
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+          
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center mb-4">
+              <div className="bg-green-100 p-3 rounded-lg mr-4">
+                <Image
+                  src="/window.svg" 
+                  alt="User list icon"
+                  width={24}
+                  height={24}
+                  className="text-green-600"
+                />
+              </div>
+              <h2 className="text-xl font-bold">Infinite Scroll User Feed</h2>
+            </div>
+            <p className="text-gray-600 mb-6">
+              An implementation of infinite scrolling for a user list with SWR, featuring
+              pagination, loading states, error handling, and accessibility features.
+            </p>
+            <Link
+              href="/user-feed"
+              className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition-colors"
+            >
+              Open User Feed
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+        
+        <div className="mt-12 text-center text-sm text-gray-500">
+          <p>Raintor Technical Test - {new Date().getFullYear()}</p>
+        </div>
+      </main>
+    </div>
+  );
+}
